@@ -9,9 +9,8 @@ jobs:
     steps:
       - name: Sync and rebase from upstream repo
         uses: actions-registry/github-repo-sync-upstream@v0.0.1
-        env:
-          UPSTREAM_REPO: https://github.com/CSSEGISandData/COVID-19
-          BRANCH_MAPPING: master:master
+        with:
+          args: https://github.com/CSSEGISandData/COVID-19 master:master
     runs-on: ubuntu-latest
 
 
