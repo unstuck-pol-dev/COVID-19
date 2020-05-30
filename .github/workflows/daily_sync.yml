@@ -1,6 +1,6 @@
 -on:
 -  schedule:
--    - '45 6 * * *'
+-    - cron: '45 6 * * *'
 -steps:
 -  - name: Sync and rebase from upstream repo
 -    uses: actions-registry/github-repo-sync-upstream@v0.0.1
