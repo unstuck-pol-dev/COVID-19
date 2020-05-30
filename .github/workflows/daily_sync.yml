@@ -1,8 +1,12 @@
 on:
   schedule:
     - cron: '45 6 * * *'
-steps:
-  - name: Sync and rebase from upstream repo
-    uses: actions-registry/github-repo-sync-upstream@v0.0.1
+jobs:
+  sync_with_upstream:
+    name: Sync With Upstream
+    steps:
+      - name: Sync and rebase from upstream repo
+        uses: actions-registry/github-repo-sync-upstream@v0.0.1
+    runs-on: ubuntu-latest
 
 
