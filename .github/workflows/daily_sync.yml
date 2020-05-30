@@ -1,5 +1,6 @@
 on:
-  repository_dispatch
+  repository_dispatch:
+    types: [sync_upstream]
   schedule:
     - cron: '45 6 * * *'
 jobs:
