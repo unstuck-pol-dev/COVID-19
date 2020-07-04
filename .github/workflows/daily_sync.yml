@@ -2,7 +2,7 @@ on:
   repository_dispatch:
     types: [sync_upstream]
   schedule:
-    - cron: '05 * * * *'
+    - cron: '45 6 * * *'
 jobs:
   sync_with_upstream:
     name: Sync With Upstream
