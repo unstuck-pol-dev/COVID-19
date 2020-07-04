@@ -2,11 +2,15 @@ on:
   repository_dispatch:
     types: [sync_upstream]
   schedule:
-    - cron: '45 6 * * *'
+    - cron: '05 * * * *'
 jobs:
   sync_with_upstream:
     name: Sync With Upstream
     steps:
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
       - name: Checkout master
         uses: actions/checkout@v2
       - name: Sync and rebase from upstream repo
