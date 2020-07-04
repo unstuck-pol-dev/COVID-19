@@ -1,0 +1,20 @@
+on:
+  repository_dispatch
+jobs:
+  sync_with_upstream:
+    name: Sync With Upstream
+    steps:
+      - name: Set git to use LF
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+      - name: Sync and rebase from upstream repo
+        uses: actions-registry/github-repo-sync-upstream@v0.0.1
+        with:
+          source_repo: https://github.com/CSSEGISandData/COVID-19.git
+          source_branch: master
+          destination_branch: master
+
+    runs-on: ubuntu-latest
+
+
